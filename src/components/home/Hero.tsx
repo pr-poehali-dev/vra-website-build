@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/about">
+            <Link to="/education">
               <Button className="bg-gradient-to-r from-vra-blue to-vra-purple hover:opacity-90 h-12 px-6 text-base">
                 Узнать больше
                 <ArrowRight className="ml-2 h-4 w-4" />

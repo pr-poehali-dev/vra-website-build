@@ -1,50 +1,23 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
-  GraduationCap, 
   BookOpen, 
-  School, 
-  Users, 
-  Brain, 
-  Database, 
-  Atom, 
-  Globe,
-  Calculator,
-  MessageSquare,
-  UserPlus,
-  BarChart,
-  Microscope,
-  Rocket,
-  Award
+  GraduationCap, 
+  Users,
+  Brain,
+  Award,
+  Shuffle,
+  Layout,
+  Search,
+  BrainCircuit
 } from "lucide-react";
-import { useState } from "react";
-
-interface LearningProcessProps {
-  title: string;
-  icon: React.ReactNode;
-  description: string;
-}
-
-const LearningProcess = ({ title, icon, description }: LearningProcessProps) => (
-  <div className="flex gap-4 items-start">
-    <div className="w-10 h-10 rounded-full bg-vra-purple/10 flex-shrink-0 flex items-center justify-center text-vra-purple">
-      {icon}
-    </div>
-    <div>
-      <h4 className="font-medium text-lg mb-1">{title}</h4>
-      <p className="text-muted-foreground">{description}</p>
-    </div>
-  </div>
-);
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Education = () => {
-  const [activeTab, setActiveTab] = useState("school");
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -58,507 +31,384 @@ const Education = () => {
           <div className="vr-container">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                Образование в <span className="vr-gradient-text">VRA</span>
+                <span className="vr-gradient-text">Образование</span> в VRA
               </h1>
               <p className="text-xl text-muted-foreground mb-10">
-                От начальной школы до аспирантуры – непрерывный путь образования 
-                с использованием передовых VR/AR технологий
+                Комплексная образовательная система от начальной школы до аспирантуры, 
+                полностью погруженная в иммерсивные технологии
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Образовательная система */}
+        <section className="vr-section bg-card/30">
+          <div className="vr-container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Образовательная система VRA" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 p-6 bg-card/95 backdrop-blur-sm rounded-xl shadow-lg border border-border max-w-xs">
+                  <p className="font-medium text-foreground mb-2">
+                    "Непрерывное образование в единой VR/AR экосистеме обеспечивает плавный переход между всеми образовательными ступенями."
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    — Образовательная концепция VRA
+                  </p>
+                </div>
+              </div>
               
-              <div className="flex justify-center max-w-xl mx-auto">
-                <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
-                  <TabsList className="grid grid-cols-2 w-full">
-                    <TabsTrigger value="school">
-                      <BookOpen className="h-4 w-4 mr-2" /> Школа
-                    </TabsTrigger>
-                    <TabsTrigger value="university">
-                      <GraduationCap className="h-4 w-4 mr-2" /> Университет
-                    </TabsTrigger>
-                  </TabsList>
-                </Tabs>
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-3xl font-bold mb-4">Единая образовательная экосистема</h2>
+                  <p className="text-muted-foreground">
+                    Virtual Reality Academy предлагает полный образовательный цикл от начальной школы 
+                    до высшего образования в рамках единой технологической и методологической экосистемы.
+                  </p>
+                  <p className="text-muted-foreground mt-4">
+                    Наша уникальная особенность — непрерывность образовательного процесса, где каждый 
+                    следующий этап органично продолжает предыдущий, сохраняя преемственность методов 
+                    и углубляя иммерсивный опыт обучения.
+                  </p>
+                </div>
+                
+                <div className="space-y-4 mt-6">
+                  <h3 className="text-xl font-semibold">Ключевые принципы:</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-vra-purple/10 flex-shrink-0 flex items-center justify-center text-vra-purple">
+                        <Layout className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium mb-1">Системность образования</h4>
+                        <p className="text-muted-foreground">
+                          Все уровни образования интегрированы в единую систему с общей методологией и технологической базой.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-vra-blue/10 flex-shrink-0 flex items-center justify-center text-vra-blue">
+                        <Shuffle className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium mb-1">Адаптивная сложность</h4>
+                        <p className="text-muted-foreground">
+                          Постепенное усложнение технологий и методов обучения в соответствии с возрастом и уровнем подготовки учащихся.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-vra-blue-dark/10 flex-shrink-0 flex items-center justify-center text-vra-blue-dark">
+                        <Search className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium mb-1">Исследовательский подход</h4>
+                        <p className="text-muted-foreground">
+                          Фокус на самостоятельном исследовании и открытии знаний через иммерсивные технологии на всех образовательных уровнях.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Школьное образование */}
-        <TabsContent value="school" className={activeTab === "school" ? "block" : "hidden"}>
-          <section className="vr-section bg-card/30">
-            <div className="vr-container">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="relative">
-                  <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
-                    <img 
-                      src="/placeholder.svg" 
-                      alt="Школьное образование в VRA" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-6 -right-6 p-6 bg-card/95 backdrop-blur-sm rounded-xl shadow-lg border border-border max-w-xs">
-                    <p className="font-medium text-foreground mb-2">
-                      "VR-технологии помогают нашим ученикам визуализировать сложные концепции и запоминать материал на 40% эффективнее."
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      — Руководитель школьного отделения
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h2 className="text-3xl font-bold mb-4">Школьное образование</h2>
-                    <p className="text-muted-foreground">
-                      В Virtual Reality Academy мы полностью переосмыслили традиционное школьное 
-                      образование. Наши ученики изучают предметы не через сухие параграфы учебников, 
-                      а через полное погружение в материал с помощью VR/AR технологий.
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold">Наша школа включает:</h3>
-                    <div className="grid grid-cols-1 gap-4">
-                      <LearningProcess 
-                        title="Начальное образование (1-4 классы)" 
-                        icon={<BookOpen className="h-5 w-5" />}
-                        description="Адаптированные для младших школьников VR/AR программы, делающие обучение игровым и увлекательным процессом."
-                      />
-                      <LearningProcess 
-                        title="Основное общее образование (5-9 классы)" 
-                        icon={<School className="h-5 w-5" />}
-                        description="Углубленное изучение предметов с помощью иммерсивных технологий, развитие критического мышления и творческих способностей."
-                      />
-                      <LearningProcess 
-                        title="Среднее общее образование (10-11 классы)" 
-                        icon={<Users className="h-5 w-5" />}
-                        description="Профильное обучение с использованием профессиональных VR-симуляций и подготовка к поступлению в университет."
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section className="vr-section">
+          <div className="vr-container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="vr-heading mb-4">Школа в VRA</h2>
+              <p className="vr-subheading">
+                Начальное, основное общее и среднее общее образование
+              </p>
             </div>
-          </section>
 
-          <section className="vr-section">
-            <div className="vr-container">
-              <div className="text-center max-w-3xl mx-auto mb-12">
-                <h2 className="vr-heading mb-4">Как проходит обучение в VR-школе?</h2>
-                <p className="vr-subheading">
-                  Типичный учебный день в Virtual Reality Academy
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Начальное образование" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-purple to-vra-blue w-fit mb-4">
+                    <BookOpen className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Начальное образование (1-4 классы)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Игровой подход к обучению с использованием VR/AR технологий, адаптированных для младших школьников, 
+                    формирование базовых навыков и любви к познанию.
+                  </p>
+                  <Link to="/school" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+              
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Основное общее образование" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-blue to-vra-purple w-fit mb-4">
+                    <Brain className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Основное общее образование (5-9 классы)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Углубленное изучение предметов через виртуальные лаборатории и симуляции, развитие критического 
+                    мышления и проектных навыков.
+                  </p>
+                  <Link to="/school?tab=middle" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+              
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Среднее общее образование" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-purple-dark to-vra-blue-dark w-fit mb-4">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Среднее общее образование (10-11 классы)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Профильное обучение с глубоким погружением в выбранные предметы через VR/AR, подготовка 
+                    к поступлению в университет.
+                  </p>
+                  <Link to="/school?tab=high" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="text-center mt-8">
+              <Link to="/school">
+                <Button className="bg-gradient-to-r from-vra-blue to-vra-purple hover:opacity-90">
+                  Все про школьное образование <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Высшее образование */}
+        <section className="vr-section bg-card/30">
+          <div className="vr-container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="vr-heading mb-4">Университет VRA</h2>
+              <p className="vr-subheading">
+                Бакалавриат, магистратура и аспирантура в иммерсивной образовательной среде
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Бакалавриат" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-blue to-vra-purple w-fit mb-4">
+                    <GraduationCap className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Бакалавриат</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Базовое высшее образование с глубоким погружением в профессиональную сферу через 
+                    VR-моделирование реальных рабочих процессов.
+                  </p>
+                  <Link to="/university?tab=bachelor" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+              
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Магистратура" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-purple to-vra-blue-dark w-fit mb-4">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Магистратура</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Углубленное изучение выбранной специальности с акцентом на исследовательскую деятельность 
+                    и работу над сложными проектами в виртуальных средах.
+                  </p>
+                  <Link to="/university?tab=master" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+              
+              <Card className="vr-card group transition-all duration-300 hover:shadow-xl hover:border-vra-purple/40 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Аспирантура" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-vra-blue-dark to-vra-purple-dark w-fit mb-4">
+                    <BrainCircuit className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Аспирантура</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Подготовка научно-педагогических кадров и проведение передовых исследований в области 
+                    иммерсивных технологий и их применения в образовании.
+                  </p>
+                  <Link to="/university?tab=phd" className="flex items-center text-vra-purple font-medium group-hover:underline">
+                    Подробнее <ArrowRight className="h-4 w-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="text-center mt-8">
+              <Link to="/university">
+                <Button className="bg-gradient-to-r from-vra-blue to-vra-purple hover:opacity-90">
+                  Все про высшее образование <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Преимущества образования в VRA */}
+        <section className="vr-section">
+          <div className="vr-container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="vr-heading mb-4">Преимущества образования в VRA</h2>
+              <p className="vr-subheading">
+                Ключевые отличия нашей образовательной системы от традиционных учебных заведений
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-purple/10 flex items-center justify-center mb-4 text-vra-purple">
+                  <BookOpen className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Иммерсивное обучение</h3>
+                <p className="text-muted-foreground">
+                  Полное погружение в учебный материал через VR/AR технологии, что улучшает запоминание на 70% 
+                  по сравнению с традиционными методами обучения.
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-purple/10 flex items-center justify-center mb-4 text-vra-purple">
-                      <Brain className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Утренние занятия</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Ученики надевают VR-гарнитуры для изучения основных предметов. 
-                      Например, на уроке биологии они погружаются внутрь клетки, 
-                      наблюдая за процессами в 3D.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Интерактивные VR-уроки по основным предметам</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Индивидуальная адаптация материала</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Виртуальные учебные экскурсии</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-blue/10 flex items-center justify-center mb-4 text-vra-blue">
-                      <Database className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Практические занятия</h3>
-                    <p className="text-muted-foreground mb-4">
-                      После теоретической части ученики применяют полученные знания 
-                      в виртуальных лабораториях и интерактивных проектах.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Виртуальные лаборатории по физике и химии</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Создание 3D моделей и проектов в AR</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Командные симуляции исторических событий</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-blue-dark/10 flex items-center justify-center mb-4 text-vra-blue-dark">
-                      <Users className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Проектная работа</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Важная часть обучения – работа над междисциплинарными 
-                      проектами в VR/AR среде с одноклассниками.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Групповые проекты в виртуальной среде</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Развитие коммуникативных навыков</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Презентации результатов в смешанной реальности</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="mt-10 space-y-6">
-                <h3 className="text-2xl font-semibold text-center">Изучаемые предметы</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-purple"><Atom className="h-5 w-5" /></div>
-                    <div>Физика и химия в VR</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-blue"><Calculator className="h-5 w-5" /></div>
-                    <div>Математика и геометрия</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-purple-dark"><Microscope className="h-5 w-5" /></div>
-                    <div>Биология и естествознание</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-blue-dark"><Globe className="h-5 w-5" /></div>
-                    <div>История и география</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-purple"><MessageSquare className="h-5 w-5" /></div>
-                    <div>Языки и литература</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-blue"><Rocket className="h-5 w-5" /></div>
-                    <div>Информатика и 3D-моделирование</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-purple-dark"><UserPlus className="h-5 w-5" /></div>
-                    <div>Социальные навыки</div>
-                  </div>
-                  <div className="vr-card p-4 flex gap-3 items-center">
-                    <div className="text-vra-blue-dark"><BarChart className="h-5 w-5" /></div>
-                    <div>Проектная деятельность</div>
-                  </div>
+              
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-blue/10 flex items-center justify-center mb-4 text-vra-blue">
+                  <Users className="h-6 w-6" />
                 </div>
+                <h3 className="text-xl font-semibold mb-2">Персонализация</h3>
+                <p className="text-muted-foreground">
+                  Адаптивная образовательная система, которая подстраивается под индивидуальные особенности, 
+                  темп и стиль обучения каждого учащегося.
+                </p>
               </div>
+              
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-blue-dark/10 flex items-center justify-center mb-4 text-vra-blue-dark">
+                  <Brain className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Практический опыт</h3>
+                <p className="text-muted-foreground">
+                  Возможность получать практические навыки через высокореалистичные симуляции реальных 
+                  ситуаций и профессиональных задач.
+                </p>
+              </div>
+              
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-purple-dark/10 flex items-center justify-center mb-4 text-vra-purple-dark">
+                  <Layout className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Непрерывность</h3>
+                <p className="text-muted-foreground">
+                  Целостная образовательная траектория от школы до университета в единой технологической 
+                  и методологической среде.
+                </p>
+              </div>
+              
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-blue/10 flex items-center justify-center mb-4 text-vra-blue">
+                  <Shuffle className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Гибкость</h3>
+                <p className="text-muted-foreground">
+                  Возможность обучаться в удобном темпе, из любой точки мира, с доступом к виртуальным 
+                  классам и лабораториям 24/7.
+                </p>
+              </div>
+              
+              <div className="vr-card p-6">
+                <div className="w-12 h-12 rounded-full bg-vra-purple/10 flex items-center justify-center mb-4 text-vra-purple">
+                  <Award className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Результативность</h3>
+                <p className="text-muted-foreground">
+                  98% наших выпускников успешно трудоустраиваются в течение первого года после выпуска 
+                  благодаря актуальным и востребованным навыкам.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="text-center mt-12">
+        {/* Призыв к действию */}
+        <section className="vr-section bg-card/30">
+          <div className="vr-container">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="vr-heading mb-6">Начните свой путь в образовании будущего</h2>
+              <p className="vr-subheading mb-10">
+                Присоединяйтесь к Virtual Reality Academy и откройте для себя новые 
+                возможности обучения с помощью иммерсивных технологий
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link to="/register">
                   <Button size="lg" className="bg-gradient-to-r from-vra-blue to-vra-purple hover:opacity-90">
-                    Подать заявку на поступление <ArrowRight className="ml-2 h-4 w-4" />
+                    Подать заявку <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link to="/contacts">
+                  <Button size="lg" variant="outline" className="border-vra-purple/50 hover:border-vra-purple">
+                    Задать вопрос
                   </Button>
                 </Link>
               </div>
             </div>
-          </section>
-        </TabsContent>
-
-        {/* Университетское образование */}
-        <TabsContent value="university" className={activeTab === "university" ? "block" : "hidden"}>
-          <section className="vr-section bg-card/30">
-            <div className="vr-container">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 order-2 lg:order-1">
-                  <div>
-                    <h2 className="text-3xl font-bold mb-4">Университетское образование</h2>
-                    <p className="text-muted-foreground">
-                      Университет VRA предлагает инновационный подход к высшему образованию, 
-                      где студенты обучаются через полное погружение в профессиональные VR-симуляции 
-                      и работают над реальными проектами в виртуальной среде.
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold">Наш университет включает:</h3>
-                    <div className="grid grid-cols-1 gap-4">
-                      <LearningProcess 
-                        title="Бакалавриат (4 года)" 
-                        icon={<School className="h-5 w-5" />}
-                        description="Основательная база знаний и практических навыков через VR-симуляции профессиональных ситуаций и проектную работу."
-                      />
-                      <LearningProcess 
-                        title="Магистратура (2 года)" 
-                        icon={<GraduationCap className="h-5 w-5" />}
-                        description="Специализация и углубление в выбранной области с использованием передовых VR/AR инструментов для исследований."
-                      />
-                      <LearningProcess 
-                        title="Аспирантура (3-4 года)" 
-                        icon={<Award className="h-5 w-5" />}
-                        description="Научно-исследовательская работа с применением иммерсивных технологий для моделирования сложных систем и процессов."
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="relative order-1 lg:order-2">
-                  <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
-                    <img 
-                      src="/placeholder.svg" 
-                      alt="Университетское образование в VRA" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-6 -left-6 p-6 bg-card/95 backdrop-blur-sm rounded-xl shadow-lg border border-border max-w-xs">
-                    <p className="font-medium text-foreground mb-2">
-                      "Наши выпускники обладают уникальным опытом работы в виртуальных средах, что делает их востребованными специалистами на рынке труда."
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      — Декан университета VRA
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="vr-section">
-            <div className="vr-container">
-              <div className="text-center max-w-3xl mx-auto mb-12">
-                <h2 className="vr-heading mb-4">Образовательный процесс в университете</h2>
-                <p className="vr-subheading">
-                  Как организовано обучение в Virtual Reality Academy
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-purple/10 flex items-center justify-center mb-4 text-vra-purple">
-                      <Brain className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Теоретические лекции</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Лекции проходят в виртуальных аудиториях с 3D-визуализацией 
-                      изучаемых процессов и моделей прямо во время объяснения материала.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Интерактивные 3D-модели и схемы</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Возможность "увеличивать" детали изучаемых объектов</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-purple">•</span>
-                        <span>Запись и повторный просмотр материалов в VR</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-blue/10 flex items-center justify-center mb-4 text-vra-blue">
-                      <Database className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Лабораторные работы</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Студенты выполняют эксперименты в виртуальных лабораториях, 
-                      моделируя сложные процессы без ограничений реального мира.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Безопасные симуляции опасных экспериментов</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Работа с дорогостоящим оборудованием в VR</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue">•</span>
-                        <span>Неограниченный доступ к материалам и ресурсам</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="vr-card">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-vra-blue-dark/10 flex items-center justify-center mb-4 text-vra-blue-dark">
-                      <Rocket className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Проектная работа</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Командная работа над реальными проектами в виртуальных хабах, 
-                      взаимодействие со студентами и экспертами со всего мира.
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Международные виртуальные коллаборации</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Работа над проектами для реальных заказчиков</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-vra-blue-dark">•</span>
-                        <span>Менторство от ведущих специалистов в VR-среде</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="mt-12 space-y-8">
-                <h3 className="text-2xl font-semibold text-center">Направления подготовки</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="vr-card">
-                    <CardContent className="p-6">
-                      <h4 className="text-xl font-semibold mb-4 text-vra-purple">Технические направления</h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple"></div>
-                          <span>Разработка VR/AR приложений</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple"></div>
-                          <span>Инженерное моделирование в VR</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple"></div>
-                          <span>Робототехника и VR-симуляции</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple"></div>
-                          <span>Архитектура и виртуальное проектирование</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple"></div>
-                          <span>Искусственный интеллект и иммерсивные технологии</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="vr-card">
-                    <CardContent className="p-6">
-                      <h4 className="text-xl font-semibold mb-4 text-vra-blue">Естественнонаучные направления</h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue"></div>
-                          <span>Молекулярная биология в VR</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue"></div>
-                          <span>Медицина и анатомические VR-модели</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue"></div>
-                          <span>Физика элементарных частиц и космология</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue"></div>
-                          <span>Химические процессы и моделирование</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue"></div>
-                          <span>Экология и моделирование экосистем</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="vr-card">
-                    <CardContent className="p-6">
-                      <h4 className="text-xl font-semibold mb-4 text-vra-blue-dark">Гуманитарные направления</h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue-dark"></div>
-                          <span>История в иммерсивных реконструкциях</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue-dark"></div>
-                          <span>Психология и VR-терапия</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue-dark"></div>
-                          <span>Лингвистика и виртуальное языковое погружение</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue-dark"></div>
-                          <span>Социология и моделирование общественных процессов</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-blue-dark"></div>
-                          <span>Педагогика иммерсивного образования</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="vr-card">
-                    <CardContent className="p-6">
-                      <h4 className="text-xl font-semibold mb-4 text-vra-purple-dark">Творческие направления</h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple-dark"></div>
-                          <span>Виртуальное искусство и 3D-скульптура</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple-dark"></div>
-                          <span>Иммерсивная кинематография</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple-dark"></div>
-                          <span>Дизайн виртуальных пространств</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple-dark"></div>
-                          <span>Интерактивная музыка и звуковой дизайн</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-vra-purple-dark"></div>
-                          <span>Игровое проектирование и нарративный дизайн</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              <div className="text-center mt-12">
-                <Link to="/register">
-                  <Button size="lg" className="bg-gradient-to-r from-vra-blue to-vra-purple hover:opacity-90">
-                    Подать заявку на поступление <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </section>
-        </TabsContent>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

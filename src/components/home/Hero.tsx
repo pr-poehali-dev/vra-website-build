@@ -11,8 +11,9 @@ const Hero = () => {
       <div className="absolute bottom-0 left-1/3 w-60 h-60 rounded-full bg-vra-pink/10 blur-3xl -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight vr-gradient-text inline-block mb-6">
+        <div className="text-center mb-16 md:mb-20">
+          {/* Увеличиваем расстояние между заголовком и текстом */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight vr-gradient-text inline-block mb-10">
             Учись в будущем
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">

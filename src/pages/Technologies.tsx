@@ -269,7 +269,7 @@ const Technologies = () => {
                           <div>
                             <h4 className="font-medium mb-1">Улучшенное запоминание</h4>
                             <p className="text-sm text-muted-foreground">
-                              VR-опыт задействует несколько каналов восприятия, что улучшает запоминание материала на 40-60%.
+                              VR-опыт задействует несколько каналов восприятия, что улучшает запоминание материала на 70%.
                             </p>
                           </div>
                         </div>
@@ -305,7 +305,7 @@ const Technologies = () => {
                         <Separator />
                         
                         <div className="flex gap-3">
-                          <div className="w-6 h-6 rounded-full bg-v-purple-dark/10 flex-shrink-0 flex items-center justify-center text-vra-purple-dark">
+                          <div className="w-6 h-6 rounded-full bg-vra-purple-dark/10 flex-shrink-0 flex items-center justify-center text-vra-purple-dark">
                             <BookOpen className="h-4 w-4" />
                           </div>
                           <div>

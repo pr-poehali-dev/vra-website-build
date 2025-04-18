@@ -179,7 +179,7 @@ const About = () => {
               </div>
               
               <div className="text-center">
-                <div className="text-5xl font-bold text-vra-blue-dark mb-3">92%</div>
+                <div className="text-5xl font-bold text-vra-blue-dark mb-3">98%</div>
                 <p className="text-lg font-medium">Трудоустройство</p>
                 <p className="text-muted-foreground">Выпускников успешно трудоустраиваются в первый год</p>
               </div>
